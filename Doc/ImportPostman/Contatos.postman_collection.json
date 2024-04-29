@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "f4ad99c7-5af0-493e-bbd2-069cd82058cd",
+		"name": "Contatos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34571211"
+	},
+	"item": [
+		{
+			"name": "Listar Contatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/contatos-api/contatos/Listar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos-api",
+						"contatos",
+						"Listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Contato",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Beatriz\",\r\n    \"email\": \"test3@test.com\",\r\n    \"telefone\": \"118745673\",\r\n    \"dataNasc\": \"1986-02-05\",\r\n    \"enderecos\": [\r\n        {\r\n            \"rua\": \"Rua Lisboa \",\r\n            \"numero\": \"40A\",\r\n            \"cep\": \"6810650\"\r\n        },\r\n        {\r\n            \"rua\": \"Rua Bela Cintra \",\r\n            \"numero\": \"456\",\r\n            \"cep\": \"06810650\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contatos-api/contatos/Adicionar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos-api",
+						"contatos",
+						"Adicionar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar Contato",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/contatos-api/contatos/Apagar/10010",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos-api",
+						"contatos",
+						"Apagar",
+						"10010"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Associar novo endereço",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rua\": \"Rua Cristovâo \",\r\n    \"numero\": \"576\",\r\n    \"cep\": \"60650977\",\r\n    \"idContato\": 10006\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contatos-api/endereco/Associar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos-api",
+						"endereco",
+						"Associar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Endereco",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rua\": \"Rua Italiana \",\r\n    \"numero\": \"15\",\r\n    \"cep\": \"6810650\",\r\n    \"idContato\": 10006\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/contatos-api/endereco/Atualizar/10025",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contatos-api",
+						"endereco",
+						"Atualizar",
+						"10025"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

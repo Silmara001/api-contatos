@@ -16,11 +16,27 @@
 	<description>API para manipulação de contatos.</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<log4j2.version>2.17.0</log4j2.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+				
+				 <exclusion>
+			      <groupId>org.springframework.boot</groupId>
+			      <artifactId>spring-boot-starter-logging</artifactId>
+			    </exclusion>
+			   	 
+			</exclusions>
 		</dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -63,6 +79,7 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -70,6 +87,26 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+			   <groupId>org.jacoco</groupId>
+			   <artifactId>jacoco-maven-plugin</artifactId>
+			   <version>0.8.2</version>
+			   <executions>
+			      <execution>
+			         <goals>
+			            <goal>prepare-agent</goal>
+			         </goals>
+			      </execution>
+			      <execution>
+			         <id>report</id>
+			         <phase>prepare-package</phase>
+			         <goals>
+			            <goal>report</goal>
+			         </goals>
+			      </execution>
+			   </executions>
 			</plugin>
 		</plugins>
 	</build>

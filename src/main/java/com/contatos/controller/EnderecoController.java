@@ -17,7 +17,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/api/endereco")
+@RequestMapping("/endereco")
 @Api(value="Manipulação de endereços")
 public class EnderecoController {
 	
