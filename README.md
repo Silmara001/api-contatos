@@ -16,6 +16,7 @@ API reponsável por manipular contatos.
 * Maven
 * Lombok
 * Wildfly 24
+* SQL Server
 
 ### 3. Configuração do Wildfly para rodar em um servidor ou local
 * Configuração do datasource no arquivo standalone.xml:
@@ -56,7 +57,7 @@ API reponsável por manipular contatos.
 
 ### 4. Configuração para rodar a API no servidor embarcado Tomcat pelo Spring
 
-Adicione as configurações diretamente no arquivo de propriedades que esta localizado "...src/main/resources/application.properties" no projeto.
+Adicione as configurações diretamente no arquivo de propriedades que esta localizado "...src/main/resources/application-dev.properties" no projeto.
 * Desta forma você esta colocando as infomações do banco diretamente no projeto:
 
 ```
@@ -68,4 +69,5 @@ spring.datasource.password=seusenha
 ### 5. Acesso
 * Acesso ao link da documentação Swagger depois que a API estiver implantada: `http://SERVIDOR:PORTA/contatos-api/swagger-ui.html#/`
 Caso rode a API pela IDE:`http://SERVIDOR:PORTA/swagger-ui.html#/`
-* Dentro da pasta do projeto você encontrará uma pasta "...Doc/" que terá uma coleção JSON para importar no Postman.
+* Dentro da pasta do projeto você encontrará uma pasta "...Doc/ImportPostman" que terá uma coleção JSON para importar no Postman.
+* Dentro da pasta "...Doc/BackupBD" terá um backup do banco de dados usado.

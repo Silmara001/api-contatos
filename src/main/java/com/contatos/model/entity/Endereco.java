@@ -9,9 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.contatos.dto.EnderecoDTO;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "endereco")
 public class Endereco implements Serializable{
@@ -33,10 +39,19 @@ public class Endereco implements Serializable{
 	
 	@Column
 	private Long idContato;
+	
+	public Endereco(EnderecoDTO dto, long idContato) {
+		this.id = dto.getId();
+		this.rua = dto.getRua();
+		this.cep = dto.getCep();
+		this.numero = dto.getNumero();
+		this.idContato = dto.getIdContato();
+	}
 
 	@Override
 	public String toString() {
-		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", cep=" + cep + "]";
+		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", cep=" + cep + ", idContato="
+				+ idContato + "]";
 	}
-
+	
 }
