@@ -2,10 +2,14 @@ package com.contatos.dto;
 
 import java.io.Serializable;
 import com.contatos.model.entity.Endereco;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class EnderecoDTO implements Serializable{
 	
@@ -16,17 +20,6 @@ public class EnderecoDTO implements Serializable{
 	private String numero;
 	private String cep;
 	private Long idContato;
-	
-	public EnderecoDTO() {}
-	
-	public EnderecoDTO(Long id, String rua, String numero, String cep, Long idContato) {
-		super();
-		this.id = id;
-		this.rua = rua;
-		this.numero = numero;
-		this.cep = cep;
-		this.idContato = idContato;
-	}
 	
 	public EnderecoDTO(Endereco endereco) {
 		super();

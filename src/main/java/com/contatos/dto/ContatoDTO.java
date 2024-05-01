@@ -8,10 +8,14 @@ import java.util.List;
 import com.contatos.model.entity.Contato;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class ContatoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -23,19 +27,6 @@ public class ContatoDTO implements Serializable {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate dataNasc;
 	private List<EnderecoDTO> enderecos = new ArrayList<>();
-	
-	public ContatoDTO() {}
-	
-	public ContatoDTO(Long id, String nome, String email, String telefone, LocalDate dataNasc,
-			List<EnderecoDTO> enderecos) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.telefone = telefone;
-		this.dataNasc = dataNasc;
-		this.enderecos = enderecos;
-	}
 	
 	public ContatoDTO(Contato contato, List<EnderecoDTO> enderecosDTO) {
 		super();
